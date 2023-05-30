@@ -1,12 +1,33 @@
 import { useState } from 'react'
-import './App.css'
+import './styles/App.css'
+import Dice from './dice'
+
 
 function App() {
-
   return (
-    <main className='main'>
+    <div className='container'>
+      <main className='main'>
+        <h1 className='title'>Tenzies</h1>
+        <h3 className='description'>
+          Roll until all dice are the same. Click each die to freeze it at its
+          current value between rolls.
+        </h3>
 
-    </main>
+        <div className='dieContainer'>
+          <Dice value={2}/>
+          <Dice value={2}/>
+          <Dice value={2}/>
+          <Dice value={2}/>
+          <Dice value={2}/>
+          <Dice value={2}/>
+          <Dice value={2}/>
+          <Dice value={2}/>
+          <Dice value={2}/>
+          <Dice value={2}/>
+        </div>
+        
+      </main>
+    </div>
   )
 }
 
