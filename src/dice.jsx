@@ -4,13 +4,12 @@ import './styles/dice.css'
 
 
 export default function (props){
-    const [isClicked, setIsClicked] = React.useState(false)
-    const backColor = isClicked ? '#59E391' : '#ffffff'
+    const backColor = props.isToggled ? '#59E391' : '#ffffff'
     
     return (
         <div className='die' 
             style={{backgroundColor:backColor}} 
-            onClick={() => setIsClicked(prev => !prev)}
+            onClick={() => props.handleClick(props.id)}
         >
             {props.value}
         </div>
