@@ -2,8 +2,31 @@ import { useState } from 'react'
 import './styles/App.css'
 import Dice from './dice'
 
+/**
+ * Returns an array of size 10 with random numbers 0-6
+ */
+const newDice = () => {
+  let diceRoles = []
+  for(let i = 0; i < 10; i++){
+    diceRoles.push(Math.floor(Math.random() * 6))
+  }
+
+  return diceRoles
+}
 
 function App() {
+  const [diceList, setDiceList] = useState(newDice())
+
+
+  const renderDice = diceList.map((entry, index) => {
+    return (
+      <Dice 
+        key={index}  
+        value={entry}
+      />
+    )
+  })
+
   return (
     <div className='container'>
       <main className='main'>
@@ -14,16 +37,7 @@ function App() {
         </h3>
 
         <div className='dieContainer'>
-          <Dice value={2}/>
-          <Dice value={2}/>
-          <Dice value={2}/>
-          <Dice value={2}/>
-          <Dice value={2}/>
-          <Dice value={2}/>
-          <Dice value={2}/>
-          <Dice value={2}/>
-          <Dice value={2}/>
-          <Dice value={2}/>
+          {renderDice}
         </div>
         
       </main>
