@@ -21,7 +21,6 @@ const newDice = () => {
 }
 
 
-
 function App() {
   const [diceList, setDiceList] = useState(newDice())
   
@@ -38,16 +37,16 @@ function App() {
   }
   
   const rollNewDice = () => {
-    console.log('im clicked')
     setDiceList(diceList.map((entry) => {
-      
       return {
         ...entry,
         value: entry.isToggled ? entry.value : Math.floor(Math.random() * 6) 
       }
     }))
   }
-
+  const resetDice = () => {
+    setDiceList(newDice())
+  }
 
   const renderDice = diceList.map((entry) => {
     return (
@@ -73,10 +72,12 @@ function App() {
         <div className='dieContainer'>
           {renderDice}
         </div>
-        <button className='rerollDice' onClick={rollNewDice}>
-          click Me
+        <button className='button' onClick={rollNewDice}>
+          ReRoll
         </button>
-        
+        <button className='button' onClick={resetDice}>
+          Reset
+        </button>
       </main>
     </div>
   )

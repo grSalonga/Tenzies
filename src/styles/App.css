@@ -1,12 +1,15 @@
 .container{
   margin-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main{
   background-color: #F5F5F5;
   margin-top: 100px;
   border-radius: 10px;
-  height: 475px;
+  height: 525px;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -31,12 +34,13 @@
   grid-template: 65px 65px / 65px 65px 65px 65px 65px;
 }
 
-.rerollDice{
+.button{
   height: 50px;
   width: 100px;
+  margin-top: 10px;
   border: none;
   border-radius: 6px;
-  background-color: #5035FF;
+  background-color: #1e4974;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
